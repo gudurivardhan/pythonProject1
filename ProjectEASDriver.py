@@ -2,6 +2,7 @@ from tkinter import *
 
 import EAS_Registration
 import EAS_ScanQR
+import View_Attendance
 
 
 def open_registration_form():
@@ -11,6 +12,10 @@ def open_registration_form():
 
 def open_scan_form():
     EAS_ScanQR.scan_QR(root)
+
+
+def viewAttendees():
+    View_Attendance.view_Details(root)
 
 
 try:
@@ -27,10 +32,10 @@ try:
 
     register = Button(content_frame, text="Register", font="Helvetica 16 bold", command=open_registration_form)
     scan = Button(content_frame, text="Scan QR", font="Helvetica 16 bold", command=open_scan_form)
-
+    view = Button(content_frame, text="View Attendees", font="Helvetica 16 bold", command=viewAttendees)
     register.grid(row=0, column=1, padx=20, pady=20, sticky="ew")
     scan.grid(row=2, column=1, padx=20, pady=20, sticky="ew")
-
+    view.grid(row=3, column=1, padx=20, pady=20, sticky="ew")
     root.mainloop()
 except KeyboardInterrupt:
     pass
